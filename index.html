@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>naruto</title>
+  <meta name="description" content="engineer at polymarket. previously avail. into prediction markets, perps, defi, LLMs, and smart glasses." />
+  <meta property="og:title" content="naruto" />
+  <meta property="og:description" content="engineer at polymarket. previously avail. into prediction markets, perps, defi, LLMs, and smart glasses." />
+  <meta property="og:url" content="https://naruto.dev" />
+  <meta property="og:type" content="website" />
+  <link rel="canonical" href="https://naruto.dev" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🍥</text></svg>" />
+  <style>
+    :root {
+      --bg: #ffffff;
+      --fg: #1a1a1a;
+      --muted: #6b6b6b;
+      --accent: #e05d2d;
+      --rule: #e6e6e6;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #101010;
+        --fg: #e8e6e3;
+        --muted: #8f8f8f;
+        --accent: #ff7a45;
+        --rule: #262626;
+      }
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--fg);
+      font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+      font-size: 15px;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+    main {
+      max-width: 620px;
+      margin: 0 auto;
+      padding: 4.5rem 1.25rem 5rem;
+    }
+    h1 {
+      font-size: 1.35rem;
+      font-weight: 600;
+      margin: 0 0 0.25rem;
+    }
+    .tagline { color: var(--muted); margin: 0 0 1.75rem; }
+    .tagline a { color: var(--fg); }
+    section { margin-top: 2.25rem; }
+    h2 {
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--muted);
+      border-bottom: 1px solid var(--rule);
+      padding-bottom: 0.4rem;
+      margin: 0 0 0.9rem;
+    }
+    ul { margin: 0; padding-left: 1.2rem; }
+    li { margin-bottom: 0.7rem; }
+    li::marker { color: var(--muted); }
+    li b { font-weight: 600; }
+    .desc { color: var(--muted); }
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+    a:hover { text-decoration: underline; text-underline-offset: 3px; }
+    .wip { color: var(--muted); font-size: 0.8em; }
+    footer {
+      margin-top: 3.5rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--rule);
+      color: var(--muted);
+      font-size: 0.85rem;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>naruto 🍥</h1>
+    <p class="tagline">
+      ping me on <a href="https://x.com/naruto11eth" target="_blank" rel="noopener">twitter</a> or
+      <a href="https://github.com/naruto11eth" target="_blank" rel="noopener">github</a>
+    </p>
+
+    <section>
+      <ul>
+        <li>currently engineer at <a href="https://polymarket.com" target="_blank" rel="noopener">polymarket</a>. before that i was at <a href="https://www.availproject.org" target="_blank" rel="noopener">avail</a> building data availability infra and <a href="https://www.availproject.org/nexus" target="_blank" rel="noopener">nexus</a>, their cross-chain interop layer. spent my early years in web2.</li>
+        <li>i got into ML before crypto: my undergrad thesis (2018-2021) was on facial expression recognition, training FER models with GANs and early transformers to find the relationship between emotions and dementia severity among elderly patients.</li>
+        <li>around the same time i went deep on NLP: fine-tuned small transformers to summarize clinical interview notes, and used GANs to generate synthetic training data for low-resource emotion datasets.</li>
+        <li>these days i think mostly about prediction markets, perps, defi, LLMs, and smart glasses.</li>
+        <li>on the last one: i prototyped smart glasses that run small language models on-device.</li>
+        <li>currently geeking out on split/ergo keyboards. my main driver is the <a href="https://www.cyboard.digital" target="_blank" rel="noopener">cyboard imprint</a> with <a href="https://github.com/naruto11eth/naruto-keyboard-layout" target="_blank" rel="noopener">my own layout</a> on zmk firmware.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>research <span class="wip">(undergrad, 2018-2021)</span></h2>
+      <ul>
+        <li>
+          <b>emotion-dementia mapping</b>:<span class="desc"> thesis work. multimodal pipeline combining FER with speech prosody features to estimate dementia severity in elderly patients, validated against clinician-scored assessments.</span>
+        </li>
+        <li>
+          <b>expression synthesis for imbalanced FER</b>:<span class="desc"> conditional GAN that synthesizes minority-class facial expressions (fear, disgust) to augment FER2013 and CK+, improving minority-class recall over classical oversampling.</span>
+        </li>
+        <li>
+          <b>vision-guided autonomous forklift</b>:<span class="desc"> perception stack for a warehouse forklift. a CNN detector localizes pallets and estimates pose from the load-facing camera so the forks align with the slots, while depth from a stereo rig maps nearby obstacles for path planning and safe navigation.</span>
+        </li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>work</h2>
+      <ul>
+        <li>
+          <a href="https://github.com/naruto11eth/cryptoskills" target="_blank" rel="noopener"><b>cryptoskills</b></a>:<span class="desc"> open-source agent skills for all of crypto. 95 protocols across ethereum, solana, L2s, defi, nfts.</span>
+        </li>
+        <li>
+          <a href="https://github.com/naruto11eth/nexus-bridge-mcp" target="_blank" rel="noopener"><b>nexus-bridge-mcp</b></a>:<span class="desc"> mcp server for cross-chain bridging via avail nexus. runs locally so the private key never leaves your machine.</span>
+        </li>
+        <li>
+          <a href="https://github.com/naruto11eth/PigeonAI" target="_blank" rel="noopener"><b>pigeonAI</b></a>:<span class="desc"> autonomous telegram ai assistant with local llm support.</span>
+        </li>
+        <li>
+          <a href="https://github.com/naruto11eth/cli-friend" target="_blank" rel="noopener"><b>cli-friend</b></a>:<span class="desc"> always-on-top macos menu-bar popup that answers plain-english vim questions. offline, tauri.</span>
+        </li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>in the lab <span class="wip">(not yet public)</span></h2>
+      <ul>
+        <li><b>rasenganfi</b>:<span class="desc"> "polyaave". an erc-4626 fusion vault that earns aave yield on the collateral backing polymarket conditional-token positions. synthetic tokens, neg-risk adapter, fuzz + invariant tested in foundry.</span></li>
+        <li><b>byakugan</b>:<span class="desc"> mid-frequency systematic trading system for crypto perps. leakage-safe research + backtest engine with hard walk-forward gates, paper trading on hyperliquid.</span></li>
+        <li><b>whale-tracker</b>:<span class="desc"> cli that streams hyperliquid perp fills over websocket and surfaces large trades (>$10m notional) with live mark, funding and pnl context.</span></li>
+        <li><b>obscura</b>:<span class="desc"> real-time ai assistant for macos in tauri + rust. live deepgram transcription and streaming llm answers in a content-protected overlay.</span></li>
+        <li><b>gitbahn</b>:<span class="desc"> rust cli for autonomous git: ai commits, merges, code rewrites, reviews.</span></li>
+        <li><b>bam smart-routing client</b>:<span class="desc"> rust lib that races solana BAM rpc regions in parallel and routes txs to the fastest healthy endpoint.</span></li>
+        <li><b>mugenkai</b>:<span class="desc"> linux-first ai/crypto-native terminal in rust + gtk4.</span></li>
+        <li><b>openrecorder</b>:<span class="desc"> local-first macos meeting recorder with verified on-device transcription.</span></li>
+      </ul>
+    </section>
+
+    <footer>
+      naruto.dev · <a href="https://x.com/naruto11eth" target="_blank" rel="noopener">@naruto11eth</a>
+    </footer>
+  </main>
+</body>
+</html>
