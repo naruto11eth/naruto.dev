@@ -49,7 +49,7 @@
       margin: 0 0 0.25rem;
     }
     .tagline { color: var(--muted); margin: 0 0 1.75rem; }
-    .tagline a { color: var(--fg); }
+    .tagline a { color: var(--accent); }
     section { margin-top: 2.25rem; }
     h2 {
       font-size: 0.8rem;
@@ -79,6 +79,52 @@
       color: var(--muted);
       font-size: 0.85rem;
     }
+    .jutsu-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin: 1.75rem 0 0;
+      padding: 0.6rem 1.1rem;
+      font-family: inherit;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--accent);
+      background: transparent;
+      border: 1.5px solid var(--accent);
+      border-radius: 8px;
+      cursor: pointer;
+      transition: color 0.15s, background 0.15s, box-shadow 0.15s, transform 0.15s;
+    }
+    .jutsu-btn:hover {
+      color: #fff;
+      background: var(--accent);
+      box-shadow: 0 0 0 4px color-mix(in srgb, var(--accent) 22%, transparent), 0 6px 20px color-mix(in srgb, var(--accent) 35%, transparent);
+      transform: translateY(-1px);
+    }
+    .jutsu-btn:active { transform: translateY(0); }
+    .jutsu-btn .swirl { display: inline-block; }
+    .jutsu-btn:hover .swirl { animation: spin 0.8s linear infinite; }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    .chakra {
+      position: fixed;
+      inset: 0;
+      z-index: 999;
+      pointer-events: none;
+      opacity: 0;
+      background: radial-gradient(circle at var(--cx, 50%) var(--cy, 50%),
+        #fff2c9 0%, #ffcf6a 18%, #ff922f 40%, #e0561d 62%, transparent 78%);
+    }
+    .chakra.active { animation: chakra-burst 0.65s ease-in forwards; }
+    @keyframes chakra-burst {
+      0%   { opacity: 0; transform: scale(0.15); }
+      35%  { opacity: 0.95; }
+      100% { opacity: 1; transform: scale(3.4); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .jutsu-btn:hover .swirl { animation: none; }
+      .chakra.active { animation: chakra-fade 0.25s ease forwards; }
+      @keyframes chakra-fade { to { opacity: 1; } }
+    }
   </style>
 </head>
 <body>
@@ -88,6 +134,10 @@
       ping me on <a href="https://x.com/naruto11eth" target="_blank" rel="noopener">twitter</a> or
       <a href="https://github.com/naruto11eth" target="_blank" rel="noopener">github</a>
     </p>
+
+    <button id="jutsu" class="jutsu-btn" type="button">
+      <span class="swirl">🍥</span> hokage transformation jutsu
+    </button>
 
     <section>
       <ul>
@@ -151,5 +201,23 @@
       naruto.dev · <a href="https://x.com/naruto11eth" target="_blank" rel="noopener">@naruto11eth</a>
     </footer>
   </main>
+
+  <div id="chakra" class="chakra" aria-hidden="true"></div>
+
+  <script>
+    (function () {
+      var btn = document.getElementById('jutsu');
+      var chakra = document.getElementById('chakra');
+      var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      btn.addEventListener('click', function (e) {
+        // burst originates from the button's center
+        var r = btn.getBoundingClientRect();
+        chakra.style.setProperty('--cx', (r.left + r.width / 2) + 'px');
+        chakra.style.setProperty('--cy', (r.top + r.height / 2) + 'px');
+        chakra.classList.add('active');
+        setTimeout(function () { window.location.href = 'hokage.html'; }, reduce ? 220 : 600);
+      });
+    })();
+  </script>
 </body>
 </html>
