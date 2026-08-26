@@ -217,6 +217,12 @@
         chakra.classList.add('active');
         setTimeout(function () { window.location.href = '/hokage'; }, reduce ? 220 : 600);
       });
+      // reset the burst whenever this page is shown — including bfcache
+      // restores on back-navigation, where the overlay would otherwise
+      // stay frozen at full opacity and cover the page.
+      window.addEventListener('pageshow', function () {
+        chakra.classList.remove('active');
+      });
     })();
   </script>
 </body>
